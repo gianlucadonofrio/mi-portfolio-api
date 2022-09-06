@@ -18,11 +18,11 @@ router.post('/api/mail', async (req, res) => {
   };
   try {
     await sgMail.send(msg);
-    res.status(200).json
+    res.status(200).json;
   } catch (error) {
-    res.status(error.code).json(error.message);
+    res.status(500).json;
+    
   }
-
   res.status(201).send({ success: true });
 });
 
