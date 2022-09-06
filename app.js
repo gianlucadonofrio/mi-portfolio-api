@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'index.html'));
